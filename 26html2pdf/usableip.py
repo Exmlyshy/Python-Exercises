@@ -15,8 +15,8 @@ def iptest(url, proxies):
     for i in range(len(proxies)):
         try:
             proxy_handler = request.ProxyHandler(
-                {proxies[i][0]: proxies[i][1]})
-            print(str({proxies[i][0]: proxies[i][1]}))
+                {proxies[i][0].lower(): proxies[i][1]})
+            print(str({proxies[i][0].lower: proxies[i][1]}))
             opener = request.build_opener(proxy_handler)
             r = opener.open(url, timeout=2)
             print(r.info())
