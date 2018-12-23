@@ -22,7 +22,7 @@ def recv(sock:socket.socket,addr):
 
 def send(sock,addr):
     while True:
-        string=name+':'+input()
+        string=name+' : '+input()
         data=string.encode('utf-8')
         sock.sendto(data,addr)
         if 'EXIT' in string:
@@ -43,6 +43,7 @@ def main():
     
 
 if __name__ == '__main__':
-    print("欢迎来到聊天室,退出聊天室请输入'EXIT'")
-    name=input('你的名字:')
+    print("-----欢迎来到聊天室,退出聊天室请输入'EXIT'-----")
+    name=input('请输入你的名称:')
+    print('-----------------%s------------------'%name)
     main()

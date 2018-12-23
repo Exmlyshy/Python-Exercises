@@ -16,26 +16,27 @@ def main():
 
     logging.info('UDP Server on %s:%s...', addr[0], addr[1])
 
-    user = {} #{addr:name}
+    user = {}  # {addr:name}
     while True:
         try:
-            data, addr = s.recvfrom(1024)        
+            data, addr = s.recvfrom(1024)
             if not addr in user:
                 for address in user:
-                    s.sendto(data + '进入聊天室'.encode(), address)
+                    s.sendto(data + ' 进入聊天室...'.encode(), address)
                 user[addr] = data.decode('utf-8')
                 continue
 
             if 'EXIT' in data.decode('utf-8'):
-                name=user[addr]
+                name = user[addr]
                 user.pop(addr)
                 for address in user:
-                    s.sendto((name + '离开了聊天室').encode(), address)
+                    s.sendto((name + ' 离开了聊天室...').encode(), address)
             else:
                 print('"%s" from %s:%s' %
                       (data.decode('utf-8'), addr[0], addr[1]))
                 for address in user:
-                    s.sendto(data,address)
+                    if address != addr:
+                        s.sendto(data, address)
 
         except ConnectionResetError:
             logging.warning('Someone left unexcept.')
