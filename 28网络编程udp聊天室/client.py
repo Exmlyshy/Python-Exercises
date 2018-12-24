@@ -40,6 +40,8 @@ def main():
     ts=threading.Thread(target=send,args=(s,server))
     tr.start()
     ts.start()
+    ts.join()
+    s.close()
     
 
 if __name__ == '__main__':
