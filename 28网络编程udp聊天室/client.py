@@ -6,7 +6,7 @@ import time
 import threading
 
 
-def recv(sock: socket.socket, addr):
+def recv(sock, addr):
     '''
     一个UDP连接在接收消息前必须要让系统知道所占端口
     也就是需要send一次，否则会win下报错

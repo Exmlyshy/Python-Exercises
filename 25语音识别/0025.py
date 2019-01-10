@@ -17,8 +17,8 @@ TIME = 4  # 秒，2000x4=8000
 FILEPATH = 'speech.pcm'
 
 base_url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=%s&client_secret=%s"
-APIKey = "LZAdqHU*******mbfKm"
-SecretKey = "WYPPwgHuK******s9FBU6G**VOt1"
+APIKey = "LZAdqHUGC56WYmI6w7lmbfKm"
+SecretKey = "WYPPwgHuKAVpoKCiK3es9FBU6GM3VOt1"
 
 HOST = base_url % (APIKey, SecretKey)
 
