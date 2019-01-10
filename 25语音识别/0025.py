@@ -7,6 +7,7 @@ import time
 import base64
 from pyaudio import PyAudio, paInt16
 import webbrowser
+from ig_config import *
 
 
 framerate = 16000  # 采样率
@@ -16,9 +17,9 @@ sampwidth = 2  # 采样宽度2bytes
 TIME = 4  # 秒，2000x4=8000
 FILEPATH = 'speech.pcm'
 
-base_url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=%s&client_secret=%s"
-APIKey = "LZAdqHUGC56WYmI6w7lmbfKm"
-SecretKey = "WYPPwgHuKAVpoKCiK3es9FBU6GM3VOt1"
+base_url = BASE_URL
+APIKey = APIKEY
+SecretKey = SECRETKEY
 
 HOST = base_url % (APIKey, SecretKey)
 
